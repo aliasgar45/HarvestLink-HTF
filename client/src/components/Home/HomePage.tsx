@@ -89,7 +89,7 @@ const HomePage = () => {
       <div className="home-page-category-div">
         <label>Category</label>
         <div className="home-page-category-cards-div">
-          <Link to={'/donation/add'} style={{ textDecoration:"none",color:"#000" }}>
+          <Link to={'/donations/add'} style={{ textDecoration:"none",color:"#000" }}>
             <div className="home-page-category-card">
               <div className="home-page-category-img">
                 <img src={order} alt="" />
@@ -97,7 +97,7 @@ const HomePage = () => {
               <label style={{ fontSize: "0.9rem" }}>Order Food</label>
             </div>
           </Link>
-          <Link to={'/donation/add'} style={{ textDecoration:"none",color:"#000" }}>
+          <Link to={'/requests/add'} style={{ textDecoration:"none",color:"#000" }}>
           <div className="home-page-category-card">
             <div className="home-page-category-img">
               <img src={request} alt="" />
