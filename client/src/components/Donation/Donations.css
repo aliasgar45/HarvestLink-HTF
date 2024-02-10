@@ -33,5 +33,13 @@
     font-weight: 500;
 }
 .donations-cards-div{
-    padding: 0rem 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
+.loading-spinner-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
