@@ -1,0 +1,46 @@
+.profile-top-div{
+    display: flex;
+    align-items: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+.profile-label{
+    font-size: 1.5rem;
+    text-align: center;
+}
+.profile-pic-div{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-cards-div{
+    margin-top: 1.5rem;
+    padding: 0rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+.profile-cards{
+    border-radius: 0.5rem;
+    border: 1px solid #b8b8b8;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile-thank-you-div{
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    margin-top: 4rem;
+}
+.profile-thank-you-label{
+    font-size: 2rem;
+    color: black;
+}

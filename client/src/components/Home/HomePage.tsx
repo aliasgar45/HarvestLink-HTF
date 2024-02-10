@@ -1,6 +1,5 @@
 import "./HomePage.css";
 import profile from "../../images/ProfilePic.svg";
-import MenuIcon from "@mui/icons-material/Menu";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import TakeoutDiningIcon from "@mui/icons-material/TakeoutDining";
 import img from "../../images/hotel.jpg";
@@ -9,17 +8,19 @@ import request from "../../images/requestFood.png";
 import Footer from "../Footer/Footer";
 import volunteer from "../../images/volunteer.png";
 import { Link } from "react-router-dom";
+// import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import pic from "../../images/HarvestLink (2).png"
 
 const HomePage = () => {
   return (
     <div>
       <div className="home-page-top-div">
         <div className="home-page-inner-top-div">
-          <img src={profile} className="home-page-profile-img" />
-          <label className="home-page-customer-name-label">Hi, Kiara</label>
+          {/* <ArrowBackIosNewIcon /> */}
+          <img src={pic} style={{ width:"6.5rem",marginLeft:"-1rem",marginTop:"-0.5rem" }} alt=""/>
         </div>
         <div>
-          <MenuIcon />
+          <img src={profile} className="home-page-profile-img" />
         </div>
       </div>
       <div className="home-page-food-request-div">
@@ -27,7 +28,12 @@ const HomePage = () => {
           <label className="home-page-food-request-label">
             Food Donation Request
           </label>
-          <label className="home-page-view-all-label">View All</label>
+          <Link
+            to={"/donations"}
+            style={{ textDecoration: "none", color: "#000" }}
+          >
+            <label className="home-page-view-all-label">View All</label>
+          </Link>
         </div>
         <div className="home-page-food-d-outer-div">
           <div className="home-page-food-donation-card-div">
@@ -89,36 +95,50 @@ const HomePage = () => {
       <div className="home-page-category-div">
         <label>Category</label>
         <div className="home-page-category-cards-div">
-          <Link to={'/donations/add'} style={{ textDecoration:"none",color:"#000" }}>
+          <Link
+            to={"/donations/add"}
+            style={{ textDecoration: "none", color: "#000" }}
+          >
             <div className="home-page-category-card">
               <div className="home-page-category-img">
                 <img src={order} alt="" />
               </div>
-              <label style={{ fontSize: "0.9rem" }}>Order Food</label>
+              <label style={{ fontSize: "0.9rem" }}>Donate Food</label>
             </div>
           </Link>
-          <Link to={'/requests/add'} style={{ textDecoration:"none",color:"#000" }}>
-          <div className="home-page-category-card">
-            <div className="home-page-category-img">
-              <img src={request} alt="" />
+          <Link
+            to={"/requests/add"}
+            style={{ textDecoration: "none", color: "#000" }}
+          >
+            <div className="home-page-category-card">
+              <div className="home-page-category-img">
+                <img src={request} alt="" />
+              </div>
+              <label style={{ fontSize: "0.9rem" }}>Need Food</label>
             </div>
-            <label style={{ fontSize: "0.9rem" }}>Need Food</label>
-          </div>
           </Link>
-          <Link to={'/donation/add'} style={{ textDecoration:"none",color:"#000" }}>
-          <div className="home-page-category-card">
-            <div className="home-page-category-img2">
-              <img src={volunteer} style={{ width: "5.5rem" }} alt="" />
+          <Link
+            to={"/volunteer"}
+            style={{ textDecoration: "none", color: "#000" }}
+          >
+            <div className="home-page-category-card">
+              <div className="home-page-category-img2">
+                <img src={volunteer} style={{ width: "5.5rem" }} alt="" />
+              </div>
+              <label style={{ fontSize: "0.9rem" }}>Volunteer</label>
             </div>
-            <label style={{ fontSize: "0.9rem" }}>Volunteer</label>
-          </div>
           </Link>
         </div>
       </div>
       <div className="home-page-food-r-request-div">
         <div className="home-page-food-request-labels-div">
           <label className="home-page-food-request-label">Food Request</label>
-          <label className="home-page-view-all-label">View All</label>
+          <Link
+            to={"/requests"}
+            style={{ textDecoration: "none", color: "#000" }}
+          >
+            <label className="home-page-view-all-label">View All</label>
+          </Link>
         </div>
         <div className="home-page-food-d-outer-div">
           <div className="home-page-food-donation-card-div">

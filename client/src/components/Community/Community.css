@@ -1,0 +1,57 @@
+.community-top-div{
+    display: flex;
+    align-items: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+.community-label{
+    font-size: 1.5rem;
+    text-align: center;
+}
+.community-cards-div{
+    margin-top: 1rem;
+    padding: 0rem 1.5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+.community-card-1{
+    border-radius: 1rem;
+    padding: 1rem;
+    border: 1px solid #b8b8b8;
+    background-color: #D5F7FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.community-card-2{
+    border-radius: 1rem;
+    background-color: #DEFBE9;
+    padding: 1rem;
+    border: 1px solid #b8b8b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.community-card-1-label{
+    font-size: 1rem;
+}
+.community-card-1-img{
+    width: 18rem;
+    border-radius: 1rem;
+}
+.community-card-2-label{
+    font-size: 1rem;
+}
+.community-card-2-img{
+    width: 18rem;
+    border-radius: 1rem;
+}

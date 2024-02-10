@@ -4,12 +4,12 @@
     justify-content: space-between;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    padding-top: 1rem;
 }
 
 .home-page-profile-img {
     border-radius: 7rem;
-    width: 4rem;
+    margin-top: 0.5rem;
+    width: 2.5rem;
 }
 
 .home-page-customer-name-label {

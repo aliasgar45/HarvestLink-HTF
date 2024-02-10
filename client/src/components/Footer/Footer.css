@@ -15,3 +15,6 @@
 .footer-icon-color{
     color: var(--primary-color);
 }
+.footer-icon{
+    color: black;
+}
