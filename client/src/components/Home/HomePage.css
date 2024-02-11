@@ -1,11 +1,17 @@
 .home-page-top-div {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    gap: 15rem;
 }
-
+.home-main-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 .home-page-profile-img {
     border-radius: 7rem;
     margin-top: 0.5rem;
@@ -31,11 +37,13 @@
     padding-right: 1.5rem;
 
 }
-.home-page-food-r-request-div{
+
+.home-page-food-r-request-div {
     margin-top: 2rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
+
 .home-page-food-d-outer-div {
     display: flex;
     align-items: center;
@@ -103,11 +111,12 @@
     border: none;
 }
 
-.home-page-category-div{
+.home-page-category-div {
     margin-top: 1rem;
     padding: 0rem 1.5rem;
 }
-.home-page-category-cards-div{
+
+.home-page-category-cards-div {
     margin-top: 1rem;
     display: flex;
     align-items: flex-start;
@@ -115,16 +124,37 @@
     flex-direction: row;
     gap: 1rem;
 }
-.home-page-category-card{
+
+.home-page-category-card {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.home-page-category-img{
 
-}
-.home-page-category-img2{
+.home-page-category-img {}
+
+.home-page-category-img2 {
     background-color: #f8f8f8;
     padding: 0.1rem 0.5rem;
+}
+
+.order-modal-container {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+}
+.modal-order-created-div{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--primary-color);
 }

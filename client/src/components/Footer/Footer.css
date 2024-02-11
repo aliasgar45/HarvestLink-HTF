@@ -4,13 +4,14 @@
     left: 0;
     right: 0;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* horizontal offset, vertical offset, blur radius, color */
-
+    background-color: #fff;
 }
 .footer-inner-div{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 1rem 2rem;
+    gap: 8rem;
 }
 .footer-icon-color{
     color: var(--primary-color);

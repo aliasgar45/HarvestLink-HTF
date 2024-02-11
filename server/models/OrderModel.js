@@ -8,6 +8,10 @@ const orderSchema = new mongoose.Schema({
     },
     order_id:{
         type: mongoose.Schema.Types.ObjectId,
+        required: false
+    },
+    user_id:{
+        type: mongoose.Schema.Types.ObjectId,
         required: true
     },
     order_status: {
@@ -17,7 +21,7 @@ const orderSchema = new mongoose.Schema({
     },
     order_type: {
         type: String,
-        enum: ['succeed', 'denied'],
+        enum:['donation','request','volunteer'],
         required: true
     }
     // Add more fields as needed
