@@ -1,11 +1,14 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./AddDonation.css";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import axios from "axios";
 import BASE_URL from "../../../config.ts";
+import Modal from "@mui/material/Modal";
 
 const AddDonation: React.FC = () => {
+  const navigate = useNavigate();
+  const [openModal, setOpenModal] = useState(false);
   const [formData, setFormData] = useState({
     orgName: "",
     address: "",
@@ -47,12 +50,16 @@ const AddDonation: React.FC = () => {
       try {
         const response = await axios.post(`${BASE_URL}/donatedFood/`, formData);
         console.log("Response:", response.data);
+        setOpenModal(true);
         // Redirect or show success message as needed
       } catch (error) {
         console.error("Error:", error);
         // Handle error
       }
     }
+  };
+  const handleCloseModal = () => {
+    setOpenModal(false);
   };
 
   return (
@@ -186,6 +193,24 @@ const AddDonation: React.FC = () => {
           </button>
         </div>
       </form>
+      <Modal
+        open={openModal}
+        onClose={handleCloseModal}
+        className="modal-container"
+      >
+        <div className="donation-modal">
+          <div className="modal-order-created-div">
+            <label className="modal-order-created">
+              Details Added Successfully!!
+            </label>
+          </div>
+          <div>
+            <Link to={'/'}>
+              <button className="donation-back-button">Back to Home</button>
+            </Link>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };

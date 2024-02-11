@@ -44,7 +44,7 @@ const HomePage = () => {
       // Fetch customer ID based on the user's email from the local storage
       const response = await axios.get(`${BASE_URL}/user/email/${userEmail}`);
       const customerId = response.data.customer_id;
-
+  
       // Prepare order data
       const orderData = {
         food_id: orderType === "donation" ? foodDonation._id : foodRequest._id,
@@ -53,14 +53,14 @@ const HomePage = () => {
         order_status: "succeed",
         order_type: orderType,
       };
-
+  
       // Create the order
       const createOrderResponse = await axios.post(
         `${BASE_URL}/orders/${userEmail}`,
         orderData
       );
       console.log("Order created successfully:", createOrderResponse.data);
-
+  
       // Fetch food details based on order type
       const foodId =
         orderType === "donation" ? foodDonation._id : foodRequest._id;
@@ -70,18 +70,23 @@ const HomePage = () => {
         }/${foodId}`
       );
       const foodDetails = foodDetailsResponse.data;
-
+  
       // Store order and food details in state
       setOrderDetails(createOrderResponse.data.order);
       setFoodDetails(foodDetails);
-
+  
       // Open the modal
       setOpenModal(true);
+  
+      // Call the delete API to delete the food item
+      await axios.delete(`${BASE_URL}/foodRequests/${foodId}`);
+      console.log("Food item deleted successfully");
     } catch (error) {
       // Handle error
       console.error("Error creating order:", error);
     }
   };
+  
 
   // Function to close the modal
   const handleCloseModal = () => {

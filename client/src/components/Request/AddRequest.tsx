@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import axios from 'axios';
-import './AddRequest.css';
-import BASE_URL from '../../../config';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import axios from "axios";
+import "./AddRequest.css";
+import BASE_URL from "../../../config";
+import Modal from "@mui/material/Modal";
+
 
 const AddRequests = () => {
+  const navigate = useNavigate();
+  const [openModal, setOpenModal] = useState(false);
   const [formData, setFormData] = useState({
-    orgName: '',
-    address: '',
-    phone_number: '',
-    email: '',
-    food_type: '',
-    expiryDate: '',
-    foodQuantity: '',
+    orgName: "",
+    address: "",
+    phone_number: "",
+    email: "",
+    food_type: "",
+    expiryDate: "",
+    foodQuantity: "",
   });
   const [errors, setErrors] = useState({
     orgName: false,
@@ -25,7 +29,9 @@ const AddRequests = () => {
     foodQuantity: false,
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: false });
   };
@@ -35,7 +41,7 @@ const AddRequests = () => {
     let formValid = true;
     const newErrors: { [key: string]: boolean } = { ...errors };
     Object.entries(formData).forEach(([key, value]) => {
-      if (value.trim() === '') {
+      if (value.trim() === "") {
         formValid = false;
         newErrors[key] = true;
       }
@@ -43,12 +49,19 @@ const AddRequests = () => {
     setErrors(newErrors);
     if (formValid) {
       try {
-        const response = await axios.post(`${BASE_URL}/foodRequests/`, formData);
+        const response = await axios.post(
+          `${BASE_URL}/foodRequests/`,
+          formData
+        );
         console.log(response.data);
+        setOpenModal(true);
       } catch (error) {
-        console.error('Error:', error);
+        console.error("Error:", error);
       }
     }
+  };
+  const handleCloseModal = () => {
+    setOpenModal(false);
   };
 
   return (
@@ -56,14 +69,20 @@ const AddRequests = () => {
       <div className="add-request-label-div">
         <Link to="/">
           <ArrowBackIosNewIcon
-            style={{ width: '1rem', color: 'var(--primary-color)', marginTop: '0.5rem' }}
+            style={{
+              width: "1rem",
+              color: "var(--primary-color)",
+              marginTop: "0.5rem",
+            }}
           />
         </Link>
         <label className="add-request-label">Request</label>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="add-request-input-divs">
-          <label className="add-request-input-main-label">Please Enter your Details</label>
+          <label className="add-request-input-main-label">
+            Please Enter your Details
+          </label>
           <div className="add-request-indi-input-div">
             <label className="add-request-input-labels">Hotel/Event Name</label>
             <input
@@ -74,7 +93,9 @@ const AddRequests = () => {
               onChange={handleChange}
               placeholder="Enter Event or Hotel Name"
             />
-            {errors.orgName && <span className="error-message">This field is mandatory!</span>}
+            {errors.orgName && (
+              <span className="error-message">This field is mandatory!</span>
+            )}
           </div>
           <div className="add-request-indi-input-div">
             <label className="add-request-input-labels">Address</label>
@@ -86,7 +107,9 @@ const AddRequests = () => {
               onChange={handleChange}
               placeholder="Enter Address from where the food can be picked"
             />
-            {errors.address && <span className="error-message">This field is mandatory!</span>}
+            {errors.address && (
+              <span className="error-message">This field is mandatory!</span>
+            )}
           </div>
           <div className="add-request-indi-input-div">
             <label className="add-request-input-labels">Phone Number</label>
@@ -98,7 +121,9 @@ const AddRequests = () => {
               onChange={handleChange}
               placeholder="Enter Phone Number"
             />
-            {errors.phone_number && <span className="error-message">This field is mandatory!</span>}
+            {errors.phone_number && (
+              <span className="error-message">This field is mandatory!</span>
+            )}
           </div>
           <div className="add-request-indi-input-div">
             <label className="add-request-input-labels">Email</label>
@@ -110,7 +135,9 @@ const AddRequests = () => {
               onChange={handleChange}
               placeholder="Enter Email"
             />
-            {errors.email && <span className="error-message">This field is mandatory!</span>}
+            {errors.email && (
+              <span className="error-message">This field is mandatory!</span>
+            )}
           </div>
           <div className="add-request-indi-input-div">
             <label className="add-request-input-labels">Food Type</label>
@@ -125,10 +152,14 @@ const AddRequests = () => {
               <option value="Non Veg">Non Veg</option>
               <option value="Both">Both</option>
             </select>
-            {errors.food_type && <span className="error-message">This field is mandatory!</span>}
+            {errors.food_type && (
+              <span className="error-message">This field is mandatory!</span>
+            )}
           </div>
           <div className="add-request-indi-input-div">
-            <label className="add-request-input-labels">Expiry Date of Food</label>
+            <label className="add-request-input-labels">
+              Expiry Date of Food
+            </label>
             <input
               className="add-request-input"
               type="date"
@@ -136,10 +167,14 @@ const AddRequests = () => {
               value={formData.expiryDate}
               onChange={handleChange}
             />
-            {errors.expiryDate && <span className="error-message">This field is mandatory!</span>}
+            {errors.expiryDate && (
+              <span className="error-message">This field is mandatory!</span>
+            )}
           </div>
           <div className="add-request-indi-input-div">
-            <label className="add-request-input-labels">Food Quantity (Serving Max People)</label>
+            <label className="add-request-input-labels">
+              Food Quantity (Serving Max People)
+            </label>
             <input
               className="add-request-input"
               type="number"
@@ -148,13 +183,35 @@ const AddRequests = () => {
               onChange={handleChange}
               placeholder="Enter Food Quantity"
             />
-            {errors.foodQuantity && <span className="error-message">This field is mandatory!</span>}
+            {errors.foodQuantity && (
+              <span className="error-message">This field is mandatory!</span>
+            )}
           </div>
         </div>
         <div className="add-request-submit-div">
-          <button type="submit" className="add-request-submit-button">Submit</button>
+          <button type="submit" className="add-request-submit-button">
+            Submit
+          </button>
         </div>
       </form>
+      <Modal
+        open={openModal}
+        onClose={handleCloseModal}
+        className="modal-container"
+      >
+        <div className="donation-modal">
+          <div className="modal-order-created-div">
+            <label className="modal-order-created">
+              Details Added Successfully!!
+            </label>
+          </div>
+          <div>
+            <Link to={"/"}>
+              <button className="donation-back-button">Back to Home</button>
+            </Link>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };
