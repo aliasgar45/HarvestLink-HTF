@@ -1,0 +1,61 @@
+.add-donation-main-div{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.add-donation-label{
+    font-size: 1.2rem;
+}
+.add-donation-label-div{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+.add-donation-input-divs{
+    margin-top: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 5rem;
+}
+
+.add-donation-input-labels{
+    font-size: 0.8rem;
+}
+
+.add-donation-indi-input-div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%; /* Ensure the container takes up full width */
+ 
+}
+
+.add-donation-input {
+    border-radius: 0.5rem;
+    border: 1px solid #b8b8b8;
+    width: 100%; /* Subtract padding from the total width */
+    padding: 0.5rem 1rem;
+}
+.add-donation-input-main-label{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.add-donation-submit-div{
+    position: fixed;
+    bottom: 1rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    background-color: #fff;
+
+}
+.add-donation-submit-button{
+    width: 100%;
+    border: none;
+    padding: 0.5rem;
+    color: #fff;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+}

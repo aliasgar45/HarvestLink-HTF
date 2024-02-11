@@ -1,0 +1,23 @@
+.volunteer-top-div{
+    display: flex;
+    align-items: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+.volunteer-label{
+    font-size: 1.5rem;
+    text-align: center;
+}
+.volunteer-ongoing-orders-label{
+    font-size: 1.2rem;
+}
+.volunteer-cards-div{
+    margin-top: 1rem;
+    padding:0rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

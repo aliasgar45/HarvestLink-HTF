@@ -1,0 +1,45 @@
+.donations-top-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+}
+
+.donations-profile-img {
+    border-radius: 7rem;
+    width: 4rem;
+}
+
+.donations-customer-name-label {
+    font-family: 'Poppins';
+    font-size: 1rem;
+}
+
+.donations-inner-top-div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.donations-label-div{
+    margin-top: 1.5rem;
+    padding: 0rem 1.5rem;
+}
+.donations-label{
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+.donations-cards-div{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.loading-spinner-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
